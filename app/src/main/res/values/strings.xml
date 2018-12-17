@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Movie Show</string>
+    <string name="popular_movie">Most pupular movies</string>
+    <string name="popular_tv_show">Most pupular TV shows</string>
+    <string name="see_all">See all</string>
+    <string name="str_rank_number"># %1$d</string>
+    <string name="top_rated_movie">Top rated movies</string>
+    <string name="top_rated_tv_show">Top rated TV shows</string>
+    <string name="upcoming_movie">Upcoming movies</string>
+    <string name="on_the_ari_tv_show">On the air</string>
+    <string name="title_Moive">Movie</string>
+    <string name="title_tv_show">TV Show</string>
+    <string name="title_celebrity">Celebrity</string>
+    <string name="action_search">Search</string>
+    <string name="str_overview">Overview</string>
+    <string name="str_tag_line">Tagline</string>
+</resources>
