@@ -1,10 +1,13 @@
 package com.jiujiu.movieShow.data.remote;
 
+import com.jiujiu.movieShow.data.model.Credits;
 import com.jiujiu.movieShow.data.model.DiscoverMovieResponse;
+import com.jiujiu.movieShow.data.model.Images;
 import com.jiujiu.movieShow.data.model.Movie;
 import com.jiujiu.movieShow.data.model.MovieResponse;
+import com.jiujiu.movieShow.data.model.TvShow;
 import com.jiujiu.movieShow.data.model.TvShowResponse;
-
+import com.jiujiu.movieShow.data.model.Videos;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -39,4 +42,15 @@ public interface TmdbApiService {
     @GET("movie/{movieId}")
     Observable<Movie> getMovie(@Path("movieId")int id);
 
+    @GET("movie/{movieId}/images?include_image_language=null")
+    Observable<Images> getImagesByMovieId(@Path(("movieId")) int id);
+
+    @GET("movie/{movieId}/videos")
+    Observable<Videos> getVideosByMovieId(@Path(("movieId")) int id);
+
+    @GET("movie/{movieId}/credits")
+    Observable<Credits> getMovieCredits(@Path(("movieId")) int id);
+
+    @GET("tv/{tvId}")
+    Observable<TvShow> getTvshowById(@Path(("tvId")) int id);
 }

@@ -9,16 +9,16 @@ public class Images {
 
     @SerializedName("backdrops")
     @Expose
-    private List<Object> backdrops = null;
+    private List<Backdrop> backdrops = null;
     @SerializedName("posters")
     @Expose
     private List<Object> posters = null;
 
-    public List<Object> getBackdrops() {
+    public List<Backdrop> getBackdrops() {
         return backdrops;
     }
 
-    public void setBackdrops(List<Object> backdrops) {
+    public void setBackdrops(List<Backdrop> backdrops) {
         this.backdrops = backdrops;
     }
 

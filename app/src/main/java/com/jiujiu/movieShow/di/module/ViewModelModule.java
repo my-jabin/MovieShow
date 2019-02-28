@@ -9,6 +9,7 @@ import com.jiujiu.movieShow.ui.main.MainActivityViewModel;
 import com.jiujiu.movieShow.ui.movie.MoviesFragmentViewModel;
 import com.jiujiu.movieShow.ui.movie.movieDetail.MovieDetailActivityViewModel;
 import com.jiujiu.movieShow.ui.tvshow.TvShowFragmentViewModel;
+import com.jiujiu.movieShow.ui.tvshow.tvShowDetail.TvShowDetailActivityViewModel;
 
 import dagger.Binds;
 import dagger.Module;
@@ -38,6 +39,11 @@ public abstract class ViewModelModule {
     @ViewModelKey(MovieDetailActivityViewModel.class)
     abstract ViewModel bindsMovieDetailActivityViewModel(MovieDetailActivityViewModel movieDetailActivityViewModel);
 
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TvShowDetailActivityViewModel.class)
+    abstract ViewModel bindTvshowDetailActivityViewModel(TvShowDetailActivityViewModel tvShowDetailActivityViewModel);
 
     @Binds
     abstract ViewModelProvider.Factory bindsViewModelFactory(ViewModelFactory factory);

@@ -25,6 +25,7 @@ public class MainActivityViewModel extends BaseViewModel {
     private MutableLiveData<List<Movie>> topRatedMoviesLiveData = new MutableLiveData<>();
     private MutableLiveData<List<Movie>> upcomingMoviesLiveData = new MutableLiveData<>();
     private SingleLiveEvent<Integer> openMovieDetailEvent = new SingleLiveEvent<>();
+    private SingleLiveEvent<Integer> openTvshowDetailEvent = new SingleLiveEvent<>();
 
     @Inject
     public MainActivityViewModel(TmdbApiService service) {
@@ -99,5 +100,13 @@ public class MainActivityViewModel extends BaseViewModel {
 
     public LiveData<Integer> getOpenMovieDetailEvent(){
         return this.openMovieDetailEvent;
+    }
+
+    public void openTvshowDetailActivity(Integer tvShowId) {
+        this.openTvshowDetailEvent.setValue(tvShowId);
+    }
+
+    public LiveData<Integer> getOpenTvshowDetailEvent() {
+        return this.openTvshowDetailEvent;
     }
 }

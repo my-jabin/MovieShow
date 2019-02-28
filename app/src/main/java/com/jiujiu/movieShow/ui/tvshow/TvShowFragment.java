@@ -14,9 +14,9 @@ import com.jiujiu.movieShow.R;
 import com.jiujiu.movieShow.data.model.TvShow;
 import com.jiujiu.movieShow.databinding.TvShowFragBinding;
 import com.jiujiu.movieShow.ui.base.BaseFragment;
-import com.jiujiu.movieShow.ui.comman.AutoSwipPageChangeListener;
 import com.jiujiu.movieShow.ui.comman.CirclePagerAdapater;
 import com.jiujiu.movieShow.ui.comman.MediaRecyclerAdapter;
+import com.jiujiu.movieShow.ui.main.MainActivity;
 
 import javax.inject.Inject;
 
@@ -54,20 +54,29 @@ public class TvShowFragment extends BaseFragment<TvShowFragBinding, TvShowFragme
         getBinding().tvShowViewPager.setAdapter(mPagerAdapter);
 //        getBinding().tvShowViewPager.addOnPageChangeListener(new AutoSwipPageChangeListener(getBinding().tvShowViewPager));
         getBinding().tvShowViewPager.setOnPageClickListener(itemId -> {
-            Log.d(TAG, "setupRecyclerView: item id = " + itemId);
+            ((MainActivity) getActivity()).openTvShowDetailActivity(itemId);
         });
 
         mPopularAdapter = new MediaRecyclerAdapter<>();
         getBinding().popularRecycler.setHasFixedSize(true);
         getBinding().popularRecycler.setAdapter(mPopularAdapter);
+        mPopularAdapter.setOnMediaClickListener(mediaId -> {
+            ((MainActivity) getActivity()).openTvShowDetailActivity(mediaId);
+        });
 
         mTopRatedAdapter = new MediaRecyclerAdapter<>();
         getBinding().topRatedRecycler.setHasFixedSize(true);
         getBinding().topRatedRecycler.setAdapter(mTopRatedAdapter);
+        mTopRatedAdapter.setOnMediaClickListener(mediaId -> {
+            ((MainActivity) getActivity()).openTvShowDetailActivity(mediaId);
+        });
 
         mOnTheAirAdapter = new MediaRecyclerAdapter<>();
         getBinding().onTheAirRecycler.setHasFixedSize(true);
         getBinding().onTheAirRecycler.setAdapter(mOnTheAirAdapter);
+        mOnTheAirAdapter.setOnMediaClickListener(mediaId -> {
+            ((MainActivity) getActivity()).openTvShowDetailActivity(mediaId);
+        });
 
     }
 

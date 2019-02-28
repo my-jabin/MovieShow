@@ -6,6 +6,7 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="movie_image_height">200dp</dimen>
+    <dimen name="tvshow_image_height">200dp</dimen>
     <dimen name="movie_image_width">150dp</dimen>
     <dimen name="recycler_view_height">250dp</dimen>
     <dimen name="backdrop_image_height">280dp</dimen>
@@ -13,4 +14,17 @@
     <dimen name="linearlayout_item_space">8dp</dimen>
     <dimen name="cardview_content_padding_left">16dp</dimen>
     <dimen name="cardview_content_padding_top">8dp</dimen>
+    <dimen name="rv_movie_image_width">280dp</dimen>
+    <dimen name="rv_movie_image_height">180dp</dimen>
+    <dimen name="rv_movie_trailer_width">280dp</dimen>
+    <dimen name="rv_movie_trailer_height">180dp</dimen>
+    <dimen name="rv_movie_cast_height">180dp</dimen>
+    <dimen name="rv_movie_cast_width">140dp</dimen>
+    <dimen name="card_movie_cast_height">280dp</dimen>
+    <dimen name="movie_detail_hori_margin">32dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="tvshow_poster_width">92dp</dimen>
+    <dimen name="tvshow_poster_height">135dp</dimen>
+
 </resources>

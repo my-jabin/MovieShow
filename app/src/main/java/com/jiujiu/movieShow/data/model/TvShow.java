@@ -1,15 +1,12 @@
 package com.jiujiu.movieShow.data.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.jiujiu.movieShow.data.model.vo.Media;
 
 import java.util.List;
 
-public class TvShow implements Parcelable,Media {
+public class TvShow implements Media {
 
     @SerializedName("original_name")
     @Expose
@@ -50,37 +47,45 @@ public class TvShow implements Parcelable,Media {
     @SerializedName("origin_country")
     @Expose
     private List<String> originCountry = null;
-    public final static Parcelable.Creator<TvShow> CREATOR = new Creator<TvShow>() {
-
-
-        @SuppressWarnings({
-                "unchecked"
-        })
-        public TvShow createFromParcel(Parcel in) {
-            return new TvShow(in);
-        }
-
-        public TvShow[] newArray(int size) {
-            return (new TvShow[size]);
-        }
-
-    };
-
-    protected TvShow(Parcel in) {
-        this.originalName = ((String) in.readValue((String.class.getClassLoader())));
-        this.id = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        this.name = ((String) in.readValue((String.class.getClassLoader())));
-        this.popularity = ((Double) in.readValue((Double.class.getClassLoader())));
-        this.voteCount = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        this.voteAverage = ((Double) in.readValue((Double.class.getClassLoader())));
-        this.firstAirDate = ((String) in.readValue((String.class.getClassLoader())));
-        this.posterPath = ((String) in.readValue((String.class.getClassLoader())));
-        in.readList(this.genreIds, (java.lang.Integer.class.getClassLoader()));
-        this.originalLanguage = ((String) in.readValue((String.class.getClassLoader())));
-        this.backdropPath = ((String) in.readValue((String.class.getClassLoader())));
-        this.overview = ((String) in.readValue((String.class.getClassLoader())));
-        in.readList(this.originCountry, (java.lang.String.class.getClassLoader()));
-    }
+    @SerializedName("episode_run_time")
+    @Expose
+    private List<Integer> episodeRunTime = null;
+    @SerializedName("genres")
+    @Expose
+    private List<Genre> genres = null;
+    @SerializedName("homepage")
+    @Expose
+    private String homepage;
+    @SerializedName("in_production")
+    @Expose
+    private Boolean inProduction;
+    @SerializedName("languages")
+    @Expose
+    private List<String> languages = null;
+    @SerializedName("last_air_date")
+    @Expose
+    private String lastAirDate;
+    @SerializedName("last_episode_to_air")
+    @Expose
+    private LastEpisodeToAir lastEpisodeToAir;
+    @SerializedName("next_episode_to_air")
+    @Expose
+    private NextEpisodeToAir nextEpisodeToAir;
+    @SerializedName("number_of_episodes")
+    @Expose
+    private Integer numberOfEpisodes;
+    @SerializedName("number_of_seasons")
+    @Expose
+    private Integer numberOfSeasons;
+    @SerializedName("seasons")
+    @Expose
+    private List<Season> seasons = null;
+    @SerializedName("status")
+    @Expose
+    private String status;
+    @SerializedName("type")
+    @Expose
+    private String type;
 
     public TvShow() {
     }
@@ -139,7 +144,7 @@ public class TvShow implements Parcelable,Media {
     }
 
     public String getFirstAirDate() {
-        return firstAirDate;
+        return this.firstAirDate;
     }
 
     public void setFirstAirDate(String firstAirDate) {
@@ -194,22 +199,6 @@ public class TvShow implements Parcelable,Media {
         this.originCountry = originCountry;
     }
 
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(originalName);
-        dest.writeValue(id);
-        dest.writeValue(name);
-        dest.writeValue(popularity);
-        dest.writeValue(voteCount);
-        dest.writeValue(voteAverage);
-        dest.writeValue(firstAirDate);
-        dest.writeValue(posterPath);
-        dest.writeList(genreIds);
-        dest.writeValue(originalLanguage);
-        dest.writeValue(backdropPath);
-        dest.writeValue(overview);
-        dest.writeList(originCountry);
-    }
-
     public int describeContents() {
         return 0;
     }
@@ -223,4 +212,14 @@ public class TvShow implements Parcelable,Media {
     public String getBackDropPath() {
         return backdropPath;
     }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
 }

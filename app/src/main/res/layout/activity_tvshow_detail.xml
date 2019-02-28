@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.jiujiu.movieShow.ui.tvshow.tvShowDetail.TvShowDetailActivityViewModel" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.tvshow.tvShowDetail.TvShowDetailActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- Scrollable view here -->
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <ImageView
+                    android:id="@+id/iv_tvshow_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tvshow_image_height"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/bg_design"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/tv_tvshow_poster"
+                    android:layout_width="@dimen/tvshow_poster_width"
+                    android:layout_height="@dimen/tvshow_poster_height"
+                    android:layout_marginStart="24dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/guideline2"
+                    app:srcCompat="@drawable/bg_design" />
+
+                <TextView
+                    android:id="@+id/tv_tvshow_name"
+                    style="@style/Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_tvshow_poster"
+                    app:layout_constraintTop_toBottomOf="@id/iv_tvshow_background"
+                    tools:text="tv show name how long is " />
+
+                <TextView
+                    android:id="@+id/tv_tvshow_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Caption"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_tvshow_poster"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tvshow_name"
+                    tools:text="status" />
+
+                <TextView
+                    android:id="@+id/tv_tvshow_runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    style="@style/Caption"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    tools:text="40 Min"
+                    app:layout_constraintStart_toStartOf="@+id/tv_tvshow_status"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tvshow_status" />
+
+                <ImageView
+                    android:id="@+id/iv_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_tvshow_vote_ave"
+                    app:layout_constraintTop_toTopOf="@+id/tv_tvshow_vote_ave"
+                    app:srcCompat="@drawable/ic_star" />
+
+                <TextView
+                    android:id="@+id/tv_tvshow_vote_ave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tvshow_name"
+                    tools:text="4.9" />
+
+                <TextView
+                    android:id="@+id/tv_first_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_tvshow_poster"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="2014" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/cyan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tvshow_poster" />
+
+                <TextView
+                    android:id="@+id/tv_tvshow_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    style="@style/Content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    tools:text="overview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi sirioverview oveview hi siri" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Content"
+                    android:textColor="@color/cyan_dark"
+                    android:text="@string/read_more"
+                    app:layout_constraintStart_toStartOf="@+id/tv_tvshow_overview"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tvshow_overview" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

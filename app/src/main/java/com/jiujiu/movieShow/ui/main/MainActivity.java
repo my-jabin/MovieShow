@@ -21,6 +21,7 @@ import com.jiujiu.movieShow.ui.base.BaseActivity;
 import com.jiujiu.movieShow.ui.movie.MoviesFragment;
 import com.jiujiu.movieShow.ui.movie.movieDetail.MovieDetailActivity;
 import com.jiujiu.movieShow.ui.tvshow.TvShowFragment;
+import com.jiujiu.movieShow.ui.tvshow.tvShowDetail.TvShowDetailActivity;
 
 import javax.inject.Inject;
 
@@ -29,6 +30,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
 import static com.jiujiu.movieShow.ui.movie.movieDetail.MovieDetailActivity.MOVIEID;
+import static com.jiujiu.movieShow.ui.tvshow.tvShowDetail.TvShowDetailActivity.TVSHOWID;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivityViewModel> implements HasSupportFragmentInjector {
 
@@ -55,6 +57,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
         getViewModel().getOpenMovieDetailEvent().observe(this,movieId -> {
             Intent intent = new Intent(this,MovieDetailActivity.class);
             intent.putExtra(MOVIEID,movieId);
+            startActivity(intent);
+        });
+
+        getViewModel().getOpenTvshowDetailEvent().observe(this, tvshowId -> {
+            Intent intent = new Intent(this, TvShowDetailActivity.class);
+            intent.putExtra(TVSHOWID, tvshowId);
             startActivity(intent);
         });
     }
@@ -162,5 +170,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainActivity
 
     public void openMovieDetailActivity(Integer movieId){
         getViewModel().openMovieDetailActivity(movieId);
+    }
+
+    public void openTvShowDetailActivity(Integer tvshowId) {
+        getViewModel().openTvshowDetailActivity(tvshowId);
     }
 }

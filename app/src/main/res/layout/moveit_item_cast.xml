@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cast_layout"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardElevation="8dp"
+    app:contentPadding="4dp"
+    android:layout_height="@dimen/card_movie_cast_height"
+    android:layout_width="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_cast_image"
+            tools:src="@drawable/bg_design"
+            android:layout_width="@dimen/rv_movie_cast_width"
+            android:layout_height="@dimen/rv_movie_cast_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cast_name"
+            style="@style/CastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cast_image"
+            tools:text="Jason Momoa" />
+
+        <TextView
+            android:id="@+id/tv_character"
+            style="@style/CastNameSub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            app:autoSizeTextType="uniform"
+            android:lines="2"
+            app:autoSizeMaxTextSize="16sp"
+            app:autoSizeMinTextSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cast_name"
+            tools:text="Jason Momoa Yanbin" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.v7.widget.CardView>
